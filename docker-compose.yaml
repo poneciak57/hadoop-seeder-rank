@@ -1,0 +1,29 @@
+
+version: "3"
+
+
+include:
+  - docker-compose.slaves.yaml
+
+networks:
+  hadoop:
+    name: hadoop
+    driver: bridge
+
+services:
+  hadoop-master:
+    entrypoint: bash /root/start-hadoop.sh
+    build:
+      context: .
+    image: kiwenlau/hadoop:1.0
+    container_name: hadoop-master
+    hostname: hadoop-master
+    ports:
+      - "50070:50070"  # HDFS NameNode Web UI
+      - "8088:8088"    # YARN ResourceManager Web UI
+    volumes:
+      - ./config/slaves:/usr/local/hadoop/etc/hadoop/slaves
+    networks:
+      - hadoop
+    tty: true
+    stdin_open: true

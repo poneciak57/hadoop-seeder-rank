@@ -1,0 +1,41 @@
+services:
+  hadoop-slave1:
+    build:
+      context: .
+    image: kiwenlau/hadoop:1.0
+    container_name: hadoop-slave1
+    hostname: hadoop-slave1
+    networks:
+      - hadoop
+    tty: true
+    stdin_open: true
+  hadoop-slave2:
+    build:
+      context: .
+    image: kiwenlau/hadoop:1.0
+    container_name: hadoop-slave2
+    hostname: hadoop-slave2
+    networks:
+      - hadoop
+    tty: true
+    stdin_open: true
+  hadoop-slave3:
+    build:
+      context: .
+    image: kiwenlau/hadoop:1.0
+    container_name: hadoop-slave3
+    hostname: hadoop-slave3
+    networks:
+      - hadoop
+    tty: true
+    stdin_open: true
+  hadoop-slave4:
+    build:
+      context: .
+    image: kiwenlau/hadoop:1.0
+    container_name: hadoop-slave4
+    hostname: hadoop-slave4
+    networks:
+      - hadoop
+    tty: true
+    stdin_open: true
