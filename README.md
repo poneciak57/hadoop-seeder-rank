@@ -10,7 +10,7 @@ This project is created from [this](https://github.com/poneciak57/hadoop-cluster
 To generate test data, you can use the provided `generate.py` script. Run the script with the desired number of unique IPs and the length of the test data:
 ```bash
 ./generate.py <unique_ips> <test_length> > <output_file>
-./generate.py 3 10 > test.in
+./generate.py 3 10 > data.csv
 ```
 
 ### Format
@@ -32,4 +32,16 @@ The input data should be in the following format:
   ```bash
   docker-compose up --build -d
   ```
-TBD: Add more instructions about how to run the MapReduce job and test it with sample data.
+3. Connect to the master node:
+  ```bash
+  docker exec -it hadoop-master bash
+  cd /root/src
+  ```
+4. Run the MapReduce job using the provided script:
+  ```bash
+  ./run_pipeline.sh <number_of_reducers> <number_of_mappers> <input_file>
+  ```
+  Example:
+  ```bash
+  ./run_pipeline.sh 3 2 ../data/example.csv
+  ```

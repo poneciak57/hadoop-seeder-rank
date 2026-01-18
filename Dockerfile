@@ -5,7 +5,7 @@ MAINTAINER KiwenLau <kiwenlau@gmail.com>
 WORKDIR /root
 
 # install openssh-server, openjdk and wget
-RUN apt-get update && apt-get install -y openssh-server openjdk-7-jdk wget && \
+RUN apt-get update && apt-get install -y openssh-server openjdk-7-jdk wget g++ && \
     ln -s $(ls -d /usr/lib/jvm/java-7-openjdk-* | head -n 1) /usr/lib/jvm/java-7-openjdk-generic
 
 # install hadoop 2.7.2

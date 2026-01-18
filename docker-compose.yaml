@@ -23,6 +23,8 @@ services:
       - "8088:8088"    # YARN ResourceManager Web UI
     volumes:
       - ./config/slaves:/usr/local/hadoop/etc/hadoop/slaves
+      - ./src:/root/src
+      - ./data:/root/data
     networks:
       - hadoop
     tty: true
