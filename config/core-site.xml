@@ -4,4 +4,8 @@
         <name>fs.defaultFS</name>
         <value>hdfs://hadoop-master:9000/</value>
     </property>
+    <property>
+        <name>net.topology.script.file.name</name>
+        <value>/root/resolve-topology.sh</value>
+    </property>
 </configuration>
