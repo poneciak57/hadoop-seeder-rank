@@ -20,4 +20,8 @@
         <name>mapreduce.reduce.java.opts</name>
         <value>-Xmx1600m</value>
     </property>
+    <property>
+        <name>yarn.app.mapreduce.am.job.client.port-range</name>
+        <value>50050-50100</value>
+    </property>
 </configuration>

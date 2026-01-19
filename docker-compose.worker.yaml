@@ -17,6 +17,7 @@ services:
       - "8040:8040"    # NodeManager Localizer
       - "8041:8041"    # NodeManager RPC (Fixed port)
       - "13562:13562"  # Shuffle Handler
+      - "50050-50100:50050-50100" # MapReduce AM Ports
     environment:
       - HADOOP_HOME=/usr/local/hadoop
       - ENV_DATANODE_HOSTNAME=hadoop-slave2
