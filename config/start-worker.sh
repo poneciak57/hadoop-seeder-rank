@@ -9,6 +9,18 @@ if [ -z "$ENV_DATANODE_HOSTNAME" ]; then
 fi
 echo "Using DataNode Hostname: $ENV_DATANODE_HOSTNAME"
 
+# Inject hostname into hdfs-site.xml manually because Hadoop 2.7.2 does not support env var substitution in XML
+CONF_FILE=$HADOOP_HOME/etc/hadoop/hdfs-site.xml
+if ! grep -q "dfs.datanode.hostname" $CONF_FILE; then
+    echo "Injecting dfs.datanode.hostname into config..."
+    sed -i "/<\/configuration>/d" $CONF_FILE
+    echo "    <property>" >> $CONF_FILE
+    echo "        <name>dfs.datanode.hostname</name>" >> $CONF_FILE
+    echo "        <value>$ENV_DATANODE_HOSTNAME</value>" >> $CONF_FILE
+    echo "    </property>" >> $CONF_FILE
+    echo "</configuration>" >> $CONF_FILE
+fi
+
 # Start NodeManager (YARN) in background
 echo "Starting NodeManager..."
 $HADOOP_HOME/sbin/yarn-daemon.sh start nodemanager
