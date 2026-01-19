@@ -16,7 +16,7 @@ services:
       - "8042:8042"    # NodeManager
     environment:
       - HADOOP_HOME=/usr/local/hadoop
-      - SLAVE_HOSTNAME=hadoop-slave-2  # CHANGE THIS for each machine (hadoop-slave-1, etc)
+      - ENV_DATANODE_HOSTNAME=hadoop-slave2
     extra_hosts:
       - "hadoop-master:YOUR_MASTER_IP_HERE" # TODO replace this!
     tty: true
