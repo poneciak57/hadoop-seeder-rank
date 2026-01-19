@@ -24,10 +24,13 @@ HDFS_BIN_URI="${NAMENODE}${HDFS_BIN_DIR}"
 
 echo "Uploading binaries to HDFS ($HDFS_BIN_URI)..."
 hdfs dfs -mkdir -p $HDFS_BIN_DIR
-hdfs dfs -put -f ./bin/mapper $HDFS_BIN_DIR/
-hdfs dfs -put -f ./bin/reducer $HDFS_BIN_DIR/
-hdfs dfs -put -f ./bin/mapper_sort $HDFS_BIN_DIR/
-hdfs dfs -put -f ./bin/reducer_sort $HDFS_BIN_DIR/
+# Upload source code and build wrapper instead of pre-compiled binaries
+hdfs dfs -put -f ./mapper.cpp $HDFS_BIN_DIR/
+hdfs dfs -put -f ./reducer.cpp $HDFS_BIN_DIR/
+hdfs dfs -put -f ./mapper_sort.cpp $HDFS_BIN_DIR/
+hdfs dfs -put -f ./reducer_sort.cpp $HDFS_BIN_DIR/
+hdfs dfs -put -f ./build_and_run.sh $HDFS_BIN_DIR/
+
 
 # Configuration with command line arguments (defaults if not provided)
 # Usage: ./run-pipeline-cpp.sh [Job1_Reducers] [Job2_Reducers] [HDFS_Input_Path]
@@ -68,9 +71,9 @@ echo "------------------------------------------------"
 hadoop jar $HADOOP_STREAMING_JAR \
     -D mapreduce.job.reduces=$JOB1_REDUCERS \
     -D mapreduce.job.maps=$JOB1_MAPPERS \
-    -files "${HDFS_BIN_URI}/mapper,${HDFS_BIN_URI}/reducer" \
-    -mapper "./mapper" \
-    -reducer "./reducer" \
+    -files "${HDFS_BIN_URI}/mapper.cpp,${HDFS_BIN_URI}/reducer.cpp,${HDFS_BIN_URI}/build_and_run.sh" \
+    -mapper "bash build_and_run.sh mapper.cpp" \
+    -reducer "bash build_and_run.sh reducer.cpp" \
     -input $JOB1_INPUT \
     -output $JOB1_OUTPUT
 
@@ -86,9 +89,9 @@ echo "------------------------------------------------"
 hadoop jar $HADOOP_STREAMING_JAR \
     -D mapreduce.job.reduces=$JOB2_REDUCERS \
     -D mapreduce.job.maps=$JOB2_MAPPERS \
-    -files "${HDFS_BIN_URI}/mapper_sort,${HDFS_BIN_URI}/reducer_sort" \
-    -mapper "./mapper_sort" \
-    -reducer "./reducer_sort" \
+    -files "${HDFS_BIN_URI}/mapper_sort.cpp,${HDFS_BIN_URI}/reducer_sort.cpp,${HDFS_BIN_URI}/build_and_run.sh" \
+    -mapper "bash build_and_run.sh mapper_sort.cpp" \
+    -reducer "bash build_and_run.sh reducer_sort.cpp" \
     -input $JOB2_INPUT \
     -output $JOB2_OUTPUT
 
