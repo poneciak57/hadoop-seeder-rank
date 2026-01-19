@@ -1,0 +1,332 @@
+ ~/D/P/R/hadoop-seeder-rank   …  docker compose up -d --build                                                              Mon Jan 19 11:31:40 2026
+WARN[0000] /Users/poneciak/Desktop/Personal/Rozproszone/hadoop-seeder-rank/docker-compose.yaml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion
+[+] Building 4.0s (25/25) FINISHED
+ => [internal] load local bake definitions                                                                                                       0.0s
+ => => reading from stdin 2.73kB                                                                                                                 0.0s
+ => [hadoop-master internal] load build definition from Dockerfile                                                                               0.0s
+ => => transferring dockerfile: 1.83kB                                                                                                           0.0s
+ => WARN: MaintainerDeprecated: Maintainer instruction is deprecated in favor of using label (line 3)                                            0.0s
+ => WARN: MaintainerDeprecated: Maintainer instruction is deprecated in favor of using label (line 3)                                            0.0s
+ => WARN: MaintainerDeprecated: Maintainer instruction is deprecated in favor of using label (line 3)                                            0.0s
+ => WARN: MaintainerDeprecated: Maintainer instruction is deprecated in favor of using label (line 3)                                            0.0s
+ => WARN: MaintainerDeprecated: Maintainer instruction is deprecated in favor of using label (line 3)                                            0.0s
+ => [hadoop-slave1 internal] load metadata for docker.io/library/ubuntu:14.04                                                                    3.4s
+ => [hadoop-slave2 internal] load .dockerignore                                                                                                  0.1s
+ => => transferring context: 2B                                                                                                                  0.1s
+ => [hadoop-slave3 internal] load build context                                                                                                  0.0s
+ => => transferring context: 420B                                                                                                                0.0s
+ => [hadoop-master  1/10] FROM docker.io/library/ubuntu:14.04@sha256:64483f3496c1373bfd55348e88694d1c4d0c9b660dee6bfef5e12f43b9933b30            0.0s
+ => => resolve docker.io/library/ubuntu:14.04@sha256:64483f3496c1373bfd55348e88694d1c4d0c9b660dee6bfef5e12f43b9933b30                            0.0s
+ => CACHED [hadoop-slave1  2/10] WORKDIR /root                                                                                                   0.0s
+ => CACHED [hadoop-slave1  3/10] RUN apt-get update && apt-get install -y openssh-server openjdk-7-jdk wget g++ &&     ln -s $(ls -d /usr/lib/j  0.0s
+ => CACHED [hadoop-slave1  4/10] RUN wget https://github.com/kiwenlau/compile-hadoop/releases/download/2.7.2/hadoop-2.7.2.tar.gz &&     tar -xz  0.0s
+ => CACHED [hadoop-slave1  5/10] RUN ssh-keygen -t rsa -f ~/.ssh/id_rsa -P '' &&     cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys             0.0s
+ => CACHED [hadoop-slave1  6/10] RUN mkdir -p ~/hdfs/namenode &&     mkdir -p ~/hdfs/datanode &&     mkdir /usr/local/hadoop/logs                0.0s
+ => CACHED [hadoop-slave1  7/10] COPY config/* /tmp/                                                                                             0.0s
+ => CACHED [hadoop-slave1  8/10] RUN mv /tmp/ssh_config ~/.ssh/config &&     mv /tmp/hadoop-env.sh /usr/local/hadoop/etc/hadoop/hadoop-env.sh &  0.0s
+ => CACHED [hadoop-slave1  9/10] RUN chmod +x ~/start-hadoop.sh &&     chmod +x ~/run-wordcount.sh &&     chmod +x /usr/local/hadoop/sbin/start  0.0s
+ => CACHED [hadoop-slave1 10/10] RUN /usr/local/hadoop/bin/hdfs namenode -format                                                                 0.0s
+ => [hadoop-slave3] exporting to image                                                                                                           0.1s
+ => => exporting layers                                                                                                                          0.0s
+ => => exporting manifest sha256:24144f37e293d7e756162408d7a2e9232b089f30d9eb3f8551d601192c310240                                                0.0s
+ => => exporting config sha256:41352d807612bf27b43f08bf936d7b28e44bca7b7c7dcea3d7b94c125e545b71                                                  0.0s
+ => => exporting attestation manifest sha256:913e1fbac0b56d759add099cfa672bf5fd84919cc86dc2a3dfae50b72bddf2b3                                    0.0s
+ => => exporting manifest list sha256:0f984d5f67def047e68f9839e0ac1d7ff8035a541820fe318b9a53623ea044f0                                           0.0s
+ => => naming to docker.io/kiwenlau/hadoop:1.0                                                                                                   0.0s
+ => => unpacking to docker.io/kiwenlau/hadoop:1.0                                                                                                0.0s
+ => [hadoop-master] exporting to image                                                                                                           0.1s
+ => => exporting layers                                                                                                                          0.0s
+ => => exporting manifest sha256:f67a4e2103becbff435808cb0f92233ab7587c542ead548cda890184624dffea                                                0.0s
+ => => exporting config sha256:0d776a3925d15bf272d95316388f87a62f9956e3906306e97ef6eb8bd497f3af                                                  0.0s
+ => => exporting attestation manifest sha256:36468f0c05106424b1402a72ec7084a3285927a7c22692e36aa4d719d2c4c245                                    0.0s
+ => => exporting manifest list sha256:b3c9cea76cd2c96746a6439d80b3866c59bdcd7fe77aa7919db4ba69a8fa8b4b                                           0.0s
+ => => naming to docker.io/kiwenlau/hadoop:1.0                                                                                                   0.0s
+ => => unpacking to docker.io/kiwenlau/hadoop:1.0                                                                                                0.0s
+ => [hadoop-slave2] exporting to image                                                                                                           0.1s
+ => => exporting layers                                                                                                                          0.0s
+ => => exporting manifest sha256:9d9154b4f1130e7dbbcafac7d116711d5ccea4159bc7fb91d11837fd340d79f2                                                0.0s
+ => => exporting config sha256:591ce503e50f20858fadf81705edca6adb64597ac55af47c1995a92cf55bdee1                                                  0.0s
+ => => exporting attestation manifest sha256:c2b9e51972bd27b45e8578222681c341aabaa0b86f35364b8e5d9ae85e6f9f5d                                    0.0s
+ => => exporting manifest list sha256:360f342fffa7c67cd9f8fd5edeb640e0037e8f932698385b3cbe36da8ba6a161                                           0.0s
+ => => naming to docker.io/kiwenlau/hadoop:1.0                                                                                                   0.0s
+ => => unpacking to docker.io/kiwenlau/hadoop:1.0                                                                                                0.0s
+ => [hadoop-slave1] exporting to image                                                                                                           0.1s
+ => => exporting layers                                                                                                                          0.0s
+ => => exporting manifest sha256:5e08fe90bf76d599516b17a781a4d46dbd4d26a9668179edd4f7252250e42471                                                0.0s
+ => => exporting config sha256:c66c952604e00ca4271446312b2ea3b6d4b0596050a4675deaafe515284c7a52                                                  0.0s
+ => => exporting attestation manifest sha256:5f22521675449c4c4395a62f5d43467e3a5b4fa070e16b0881cf1b053c0971b6                                    0.0s
+ => => exporting manifest list sha256:723e0ff7703b0979943537f71ea2cfe40633ede506ce0fa932e1471ac184be78                                           0.0s
+ => => naming to docker.io/kiwenlau/hadoop:1.0                                                                                                   0.0s
+ => => unpacking to docker.io/kiwenlau/hadoop:1.0                                                                                                0.0s
+ => [hadoop-slave4] exporting to image                                                                                                           0.1s
+ => => exporting layers                                                                                                                          0.0s
+ => => exporting manifest sha256:e5d3b7c4ffc5380ec4e15fcf16ac0aac22a86e7cb918c50a19236c62f9b9b4af                                                0.0s
+ => => exporting config sha256:673033bc129b9dfdaf5bc9426b2da52cedd6ceb49d3918aa2d051b091109dd9b                                                  0.0s
+ => => exporting attestation manifest sha256:8588c9bba75bf4e62e6452ffeb20f9fd87776bed71e22e6a555c2bb57bb516df                                    0.0s
+ => => exporting manifest list sha256:9f8ed85af157070598e315f6eea3eca4585b11b165834958fc44b4e73bd0bb30                                           0.0s
+ => => naming to docker.io/kiwenlau/hadoop:1.0                                                                                                   0.0s
+ => => unpacking to docker.io/kiwenlau/hadoop:1.0                                                                                                0.0s
+ => [hadoop-slave3] resolving provenance for metadata file                                                                                       0.0s
+ => [hadoop-master] resolving provenance for metadata file                                                                                       0.0s
+ => [hadoop-slave4] resolving provenance for metadata file                                                                                       0.0s
+ => [hadoop-slave2] resolving provenance for metadata file                                                                                       0.0s
+ => [hadoop-slave1] resolving provenance for metadata file                                                                                       0.0s
+[+] Running 7/7
+ ✔ kiwenlau/hadoop:1.0      Built                                                                                                                0.0s
+ ✔ Network hadoop           Created                                                                                                              0.0s
+ ✔ Container hadoop-slave2  Started                                                                                                              0.2s
+ ✔ Container hadoop-slave4  Started                                                                                                              0.2s
+ ✔ Container hadoop-slave3  Started                                                                                                              0.2s
+ ✔ Container hadoop-master  Started                                                                                                              0.2s
+ ✔ Container hadoop-slave1  Started                                                                                                              0.2s
+ ~/D/P/R/hadoop-seeder-rank   …  du -hs ./data/1GB_test.csv                                                       4404ms  Mon Jan 19 11:31:53 2026
+1.7G	./data/1GB_test.csv
+ ~/D/P/R/hadoop-seeder-rank   …  fastfetch                                                                                 Mon Jan 19 11:31:57 2026
+                     ..'          poneciak@MacBook-Pro-Kacper
+                 ,xNMM.           ---------------------------
+               .OMMMMo            OS: macOS Sequoia 15.7.3 (24G419) arm64
+               lMM"               Host: MacBook Pro (14-inch, 2024, Three Thunderbolt 5 ports)
+     .;loddo:.  .olloddol;.       Kernel: Darwin 24.6.0
+   cKMMMMMMMMMMNWMMMMMMMMMM0:     Uptime: 3 days, 22 hours, 20 mins
+ .KMMMMMMMMMMMMMMMMMMMMMMMWd.     Packages: 170 (brew), 4 (brew-cask)
+ XMMMMMMMMMMMMMMMMMMMMMMMX.       Shell: fish 4.0.2
+;MMMMMMMMMMMMMMMMMMMMMMMM:        Display (Color LCD): 3024x1964 @ 2x in 14", 120 Hz [Built-in]
+:MMMMMMMMMMMMMMMMMMMMMMMM:        WM: Quartz Compositor 278.4.7
+.MMMMMMMMMMMMMMMMMMMMMMMMX.       WM Theme: Multicolor (Dark)
+ kMMMMMMMMMMMMMMMMMMMMMMMMWd.     Theme: Aqua
+ 'XMMMMMMMMMMMMMMMMMMMMMMMMMMk    Font: .AppleSystemUIFont [System], Helvetica [User]
+  'XMMMMMMMMMMMMMMMMMMMMMMMMK.    Cursor: Fill - Black, Outline - White (32px)
+    kMMMMMMMMMMMMMMMMMMMMMMd      Terminal: iTerm 3.6.6
+     ;KMMMMMMMWXXWMMMMMMMk.       Terminal Font: JetBrainsMonoNF-Regular (16pt)
+       "cooc*"    "*coo'"         CPU: Apple M4 Pro (14) @ 4.51 GHz
+                                  GPU: Apple M4 Pro (20) @ 1.58 GHz [Integrated]
+                                  Memory: 11.47 GiB / 24.00 GiB (48%)
+                                  Swap: 63.56 MiB / 1.00 GiB (6%)
+                                  Disk (/): 392.28 GiB / 926.35 GiB (42%) - apfs [Read-only]
+                                  Local IP (en0): 10.60.127.237/16
+                                  Battery (bq40z651): 100% (14 hours, 5 mins remaining) [Discharging]
+                                  Locale: en_US.UTF-8
+
+
+
+ ~/D/P/R/hadoop-seeder-rank   …  docker exec -it hadoop-master bash                                                        Mon Jan 19 11:31:59 2026
+root@hadoop-master:~# ls
+data  hdfs  run-wordcount.sh  src  start-hadoop.sh
+root@hadoop-master:~# cd src/
+root@hadoop-master:~/src# ls
+bin  mapper.cpp  mapper_sort.cpp  reducer.cpp  reducer_sort.cpp  run-pipeline.sh
+root@hadoop-master:~/src# ./run-pipeline.sh 4 4 ../data/1GB_test.csv
+Compiling C++ files...
+Compilation successful.
+26/01/19 10:32:54 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Uploading binaries to HDFS (hdfs://hadoop-master:9000/user/root/bin-cpp)...
+26/01/19 10:32:55 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/01/19 10:32:55 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/01/19 10:32:56 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/01/19 10:32:57 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/01/19 10:32:58 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+------------------------------------------------
+Pipeline Configuration
+Job 1 Reducers: 4
+Job 2 Reducers: 1
+Input Path:     input/data.csv
+------------------------------------------------
+Cleaning up HDFS...
+26/01/19 10:32:58 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/01/19 10:32:58 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/01/19 10:32:59 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/01/19 10:32:59 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/01/19 10:33:00 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+------------------------------------------------
+Starting Job 1: Aggregation (Sum bytes per IP) [C++]
+------------------------------------------------
+26/01/19 10:33:03 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+packageJobJar: [/tmp/hadoop-unjar518854708423412448/] [] /tmp/streamjob6718984207340085341.jar tmpDir=null
+26/01/19 10:33:04 INFO client.RMProxy: Connecting to ResourceManager at hadoop-master/172.19.0.3:8032
+26/01/19 10:33:04 INFO client.RMProxy: Connecting to ResourceManager at hadoop-master/172.19.0.3:8032
+26/01/19 10:33:04 INFO mapred.FileInputFormat: Total input paths to process : 1
+26/01/19 10:33:04 INFO mapreduce.JobSubmitter: number of splits:14
+26/01/19 10:33:04 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1768818727570_0001
+26/01/19 10:33:04 INFO impl.YarnClientImpl: Submitted application application_1768818727570_0001
+26/01/19 10:33:04 INFO mapreduce.Job: The url to track the job: http://hadoop-master:8088/proxy/application_1768818727570_0001/
+26/01/19 10:33:04 INFO mapreduce.Job: Running job: job_1768818727570_0001
+26/01/19 10:33:07 INFO mapreduce.Job: Job job_1768818727570_0001 running in uber mode : false
+26/01/19 10:33:07 INFO mapreduce.Job:  map 0% reduce 0%
+26/01/19 10:33:17 INFO mapreduce.Job:  map 33% reduce 0%
+26/01/19 10:33:18 INFO mapreduce.Job:  map 39% reduce 0%
+26/01/19 10:33:19 INFO mapreduce.Job:  map 45% reduce 0%
+26/01/19 10:33:20 INFO mapreduce.Job:  map 58% reduce 0%
+26/01/19 10:33:21 INFO mapreduce.Job:  map 62% reduce 0%
+26/01/19 10:33:22 INFO mapreduce.Job:  map 63% reduce 0%
+26/01/19 10:33:23 INFO mapreduce.Job:  map 71% reduce 0%
+26/01/19 10:33:24 INFO mapreduce.Job:  map 73% reduce 0%
+26/01/19 10:33:26 INFO mapreduce.Job:  map 82% reduce 0%
+26/01/19 10:33:27 INFO mapreduce.Job:  map 85% reduce 0%
+26/01/19 10:33:28 INFO mapreduce.Job:  map 86% reduce 0%
+26/01/19 10:33:30 INFO mapreduce.Job:  map 89% reduce 0%
+26/01/19 10:33:31 INFO mapreduce.Job:  map 90% reduce 7%
+26/01/19 10:33:32 INFO mapreduce.Job:  map 98% reduce 7%
+26/01/19 10:33:33 INFO mapreduce.Job:  map 100% reduce 7%
+26/01/19 10:33:34 INFO mapreduce.Job:  map 100% reduce 22%
+26/01/19 10:33:35 INFO mapreduce.Job:  map 100% reduce 36%
+26/01/19 10:33:36 INFO mapreduce.Job:  map 100% reduce 51%
+26/01/19 10:33:37 INFO mapreduce.Job:  map 100% reduce 64%
+26/01/19 10:33:38 INFO mapreduce.Job:  map 100% reduce 69%
+26/01/19 10:33:39 INFO mapreduce.Job:  map 100% reduce 73%
+26/01/19 10:33:40 INFO mapreduce.Job:  map 100% reduce 80%
+26/01/19 10:33:41 INFO mapreduce.Job:  map 100% reduce 84%
+26/01/19 10:33:42 INFO mapreduce.Job:  map 100% reduce 87%
+26/01/19 10:33:43 INFO mapreduce.Job:  map 100% reduce 94%
+26/01/19 10:33:44 INFO mapreduce.Job:  map 100% reduce 98%
+26/01/19 10:33:45 INFO mapreduce.Job:  map 100% reduce 100%
+26/01/19 10:33:45 INFO mapreduce.Job: Job job_1768818727570_0001 completed successfully
+26/01/19 10:33:45 INFO mapreduce.Job: Counters: 51
+	File System Counters
+		FILE: Number of bytes read=4629373198
+		FILE: Number of bytes written=6647973420
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=1816830511
+		HDFS: Number of bytes written=222764
+		HDFS: Number of read operations=54
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=8
+	Job Counters
+		Killed map tasks=1
+		Launched map tasks=15
+		Launched reduce tasks=4
+		Data-local map tasks=14
+		Rack-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=300954
+		Total time spent by all reduces in occupied slots (ms)=85412
+		Total time spent by all map tasks (ms)=300954
+		Total time spent by all reduce tasks (ms)=85412
+		Total vcore-milliseconds taken by all map tasks=300954
+		Total vcore-milliseconds taken by all reduce tasks=85412
+		Total megabyte-milliseconds taken by all map tasks=308176896
+		Total megabyte-milliseconds taken by all reduce tasks=87461888
+	Map-Reduce Framework
+		Map input records=100000000
+		Map output records=100000000
+		Map output bytes=1816775835
+		Map output materialized bytes=2016776171
+		Input split bytes=1428
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=10000
+		Reduce shuffle bytes=2016776171
+		Reduce input records=100000000
+		Reduce output records=10000
+		Spilled Records=329525928
+		Shuffled Maps =56
+		Failed Shuffles=0
+		Merged Map outputs=56
+		GC time elapsed (ms)=1557
+		CPU time spent (ms)=267170
+		Physical memory (bytes) snapshot=5315325952
+		Virtual memory (bytes) snapshot=14700883968
+		Total committed heap usage (bytes)=3464495104
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters
+		Bytes Read=1816829083
+	File Output Format Counters
+		Bytes Written=222764
+26/01/19 10:33:45 INFO streaming.StreamJob: Output directory: output_intermediate_cpp
+------------------------------------------------
+Starting Job 2: Sorting (Rank by Bytes) [C++]
+------------------------------------------------
+26/01/19 10:33:45 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+packageJobJar: [/tmp/hadoop-unjar7666735284163133839/] [] /tmp/streamjob147240362124002583.jar tmpDir=null
+26/01/19 10:33:45 INFO client.RMProxy: Connecting to ResourceManager at hadoop-master/172.19.0.3:8032
+26/01/19 10:33:45 INFO client.RMProxy: Connecting to ResourceManager at hadoop-master/172.19.0.3:8032
+26/01/19 10:33:46 INFO mapred.FileInputFormat: Total input paths to process : 4
+26/01/19 10:33:46 INFO mapreduce.JobSubmitter: number of splits:4
+26/01/19 10:33:46 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1768818727570_0002
+26/01/19 10:33:46 INFO impl.YarnClientImpl: Submitted application application_1768818727570_0002
+26/01/19 10:33:46 INFO mapreduce.Job: The url to track the job: http://hadoop-master:8088/proxy/application_1768818727570_0002/
+26/01/19 10:33:46 INFO mapreduce.Job: Running job: job_1768818727570_0002
+26/01/19 10:33:49 INFO mapreduce.Job: Job job_1768818727570_0002 running in uber mode : false
+26/01/19 10:33:49 INFO mapreduce.Job:  map 0% reduce 0%
+26/01/19 10:33:52 INFO mapreduce.Job:  map 100% reduce 0%
+26/01/19 10:33:54 INFO mapreduce.Job:  map 100% reduce 100%
+26/01/19 10:33:54 INFO mapreduce.Job: Job job_1768818727570_0002 completed successfully
+26/01/19 10:33:54 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=252770
+		FILE: Number of bytes written=1108898
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=223252
+		HDFS: Number of bytes written=222764
+		HDFS: Number of read operations=15
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters
+		Launched map tasks=4
+		Launched reduce tasks=1
+		Data-local map tasks=4
+		Total time spent by all maps in occupied slots (ms)=3640
+		Total time spent by all reduces in occupied slots (ms)=707
+		Total time spent by all map tasks (ms)=3640
+		Total time spent by all reduce tasks (ms)=707
+		Total vcore-milliseconds taken by all map tasks=3640
+		Total vcore-milliseconds taken by all reduce tasks=707
+		Total megabyte-milliseconds taken by all map tasks=3727360
+		Total megabyte-milliseconds taken by all reduce tasks=723968
+	Map-Reduce Framework
+		Map input records=10000
+		Map output records=10000
+		Map output bytes=232764
+		Map output materialized bytes=252788
+		Input split bytes=488
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=9750
+		Reduce shuffle bytes=252788
+		Reduce input records=10000
+		Reduce output records=10000
+		Spilled Records=20000
+		Shuffled Maps =4
+		Failed Shuffles=0
+		Merged Map outputs=4
+		GC time elapsed (ms)=49
+		CPU time spent (ms)=1100
+		Physical memory (bytes) snapshot=1513611264
+		Virtual memory (bytes) snapshot=4083716096
+		Total committed heap usage (bytes)=968359936
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters
+		Bytes Read=222764
+	File Output Format Counters
+		Bytes Written=222764
+26/01/19 10:33:54 INFO streaming.StreamJob: Output directory: output_final_cpp
+------------------------------------------------
+Pipeline Finished Successfully.
+Here are the top 10 results:
+26/01/19 10:33:54 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+4.74.97.121	4797958
+8.149.160.70	4800481
+249.13.186.152	4804782
+181.135.0.198	4805875
+247.60.129.65	4806297
+1.200.234.118	4807674
+234.131.83.151	4811698
+148.216.4.2	4815354
+241.209.76.90	4820829
+172.105.8.144	4826653
+cat: Unable to write to output stream.
+root@hadoop-master:~/src#

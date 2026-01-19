@@ -1,0 +1,387 @@
+ ~/D/P/R/hadoop-seeder-rank   *~…  docker exec -it hadoop-master bash                                                      Mon Jan 19 20:23:59 2026
+root@hadoop-master:~# cd src/
+root@hadoop-master:~/src# ./run-pipeline.sh 4 4 ../data/50GB_test.csv
+Compiling C++ files...
+Compilation successful.
+26/01/19 19:24:16 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Uploading binaries to HDFS (hdfs://hadoop-master:9000/user/root/bin-cpp)...
+26/01/19 19:24:17 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/01/19 19:24:17 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/01/19 19:24:18 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/01/19 19:24:19 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/01/19 19:24:20 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+------------------------------------------------
+Pipeline Configuration
+Job 1 Reducers: 4
+Job 2 Reducers: 1
+Input Path:     input/data.csv
+------------------------------------------------
+Cleaning up HDFS...
+26/01/19 19:24:20 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/01/19 19:24:21 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/01/19 19:24:21 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/01/19 19:24:22 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/01/19 19:24:22 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+------------------------------------------------
+Starting Job 1: Aggregation (Sum bytes per IP) [C++]
+------------------------------------------------
+26/01/19 19:26:43 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+packageJobJar: [/tmp/hadoop-unjar3815893820851893556/] [] /tmp/streamjob2074533215888326240.jar tmpDir=null
+26/01/19 19:26:43 INFO client.RMProxy: Connecting to ResourceManager at hadoop-master/172.19.0.4:8032
+26/01/19 19:26:43 INFO client.RMProxy: Connecting to ResourceManager at hadoop-master/172.19.0.4:8032
+26/01/19 19:26:43 INFO mapred.FileInputFormat: Total input paths to process : 1
+26/01/19 19:26:43 INFO mapreduce.JobSubmitter: number of splits:406
+26/01/19 19:26:43 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1768850651490_0001
+26/01/19 19:26:44 INFO impl.YarnClientImpl: Submitted application application_1768850651490_0001
+26/01/19 19:26:44 INFO mapreduce.Job: The url to track the job: http://hadoop-master:8088/proxy/application_1768850651490_0001/
+26/01/19 19:26:44 INFO mapreduce.Job: Running job: job_1768850651490_0001
+26/01/19 19:26:47 INFO mapreduce.Job: Job job_1768850651490_0001 running in uber mode : false
+26/01/19 19:26:47 INFO mapreduce.Job:  map 0% reduce 0%
+26/01/19 19:26:58 INFO mapreduce.Job:  map 1% reduce 0%
+26/01/19 19:27:01 INFO mapreduce.Job:  map 2% reduce 0%
+26/01/19 19:27:07 INFO mapreduce.Job:  map 3% reduce 0%
+26/01/19 19:27:15 INFO mapreduce.Job:  map 4% reduce 0%
+26/01/19 19:27:19 INFO mapreduce.Job:  map 5% reduce 0%
+26/01/19 19:27:24 INFO mapreduce.Job:  map 6% reduce 0%
+26/01/19 19:27:29 INFO mapreduce.Job:  map 7% reduce 0%
+26/01/19 19:27:37 INFO mapreduce.Job:  map 8% reduce 0%
+26/01/19 19:27:41 INFO mapreduce.Job:  map 9% reduce 0%
+26/01/19 19:27:46 INFO mapreduce.Job:  map 10% reduce 0%
+26/01/19 19:27:54 INFO mapreduce.Job:  map 11% reduce 0%
+26/01/19 19:27:59 INFO mapreduce.Job:  map 12% reduce 0%
+26/01/19 19:28:03 INFO mapreduce.Job:  map 13% reduce 0%
+26/01/19 19:28:08 INFO mapreduce.Job:  map 14% reduce 0%
+26/01/19 19:28:17 INFO mapreduce.Job:  map 15% reduce 0%
+26/01/19 19:28:21 INFO mapreduce.Job:  map 16% reduce 0%
+26/01/19 19:28:26 INFO mapreduce.Job:  map 17% reduce 0%
+26/01/19 19:28:34 INFO mapreduce.Job:  map 18% reduce 1%
+26/01/19 19:28:39 INFO mapreduce.Job:  map 19% reduce 1%
+26/01/19 19:28:45 INFO mapreduce.Job:  map 20% reduce 1%
+26/01/19 19:28:54 INFO mapreduce.Job:  map 21% reduce 1%
+26/01/19 19:28:58 INFO mapreduce.Job:  map 22% reduce 1%
+26/01/19 19:29:04 INFO mapreduce.Job:  map 23% reduce 1%
+26/01/19 19:29:08 INFO mapreduce.Job:  map 23% reduce 2%
+26/01/19 19:29:14 INFO mapreduce.Job:  map 24% reduce 2%
+26/01/19 19:29:18 INFO mapreduce.Job:  map 25% reduce 2%
+26/01/19 19:29:24 INFO mapreduce.Job:  map 26% reduce 2%
+26/01/19 19:29:32 INFO mapreduce.Job:  map 27% reduce 2%
+26/01/19 19:29:37 INFO mapreduce.Job:  map 28% reduce 2%
+26/01/19 19:29:42 INFO mapreduce.Job:  map 29% reduce 2%
+26/01/19 19:29:50 INFO mapreduce.Job:  map 30% reduce 2%
+26/01/19 19:29:55 INFO mapreduce.Job:  map 30% reduce 3%
+26/01/19 19:29:56 INFO mapreduce.Job:  map 31% reduce 3%
+26/01/19 19:30:01 INFO mapreduce.Job:  map 32% reduce 3%
+26/01/19 19:30:07 INFO mapreduce.Job:  map 32% reduce 4%
+26/01/19 19:30:11 INFO mapreduce.Job:  map 33% reduce 4%
+26/01/19 19:30:17 INFO mapreduce.Job:  map 34% reduce 4%
+26/01/19 19:30:26 INFO mapreduce.Job:  map 35% reduce 4%
+26/01/19 19:30:27 INFO mapreduce.Job:  map 35% reduce 5%
+26/01/19 19:30:31 INFO mapreduce.Job:  map 36% reduce 5%
+26/01/19 19:30:38 INFO mapreduce.Job:  map 37% reduce 5%
+26/01/19 19:30:46 INFO mapreduce.Job:  map 38% reduce 5%
+26/01/19 19:30:48 INFO mapreduce.Job:  map 38% reduce 6%
+26/01/19 19:30:54 INFO mapreduce.Job:  map 39% reduce 6%
+26/01/19 19:31:03 INFO mapreduce.Job:  map 40% reduce 6%
+26/01/19 19:31:09 INFO mapreduce.Job:  map 41% reduce 7%
+26/01/19 19:31:17 INFO mapreduce.Job:  map 42% reduce 7%
+26/01/19 19:31:24 INFO mapreduce.Job:  map 43% reduce 7%
+26/01/19 19:31:31 INFO mapreduce.Job:  map 44% reduce 7%
+26/01/19 19:31:34 INFO mapreduce.Job:  map 44% reduce 8%
+26/01/19 19:31:41 INFO mapreduce.Job:  map 45% reduce 8%
+26/01/19 19:31:49 INFO mapreduce.Job:  map 46% reduce 8%
+26/01/19 19:31:52 INFO mapreduce.Job:  map 46% reduce 9%
+26/01/19 19:31:58 INFO mapreduce.Job:  map 47% reduce 9%
+26/01/19 19:32:06 INFO mapreduce.Job:  map 48% reduce 9%
+26/01/19 19:32:08 INFO mapreduce.Job:  map 48% reduce 10%
+26/01/19 19:32:16 INFO mapreduce.Job:  map 49% reduce 10%
+26/01/19 19:32:25 INFO mapreduce.Job:  map 50% reduce 10%
+26/01/19 19:32:29 INFO mapreduce.Job:  map 50% reduce 11%
+26/01/19 19:32:34 INFO mapreduce.Job:  map 51% reduce 11%
+26/01/19 19:32:41 INFO mapreduce.Job:  map 52% reduce 11%
+26/01/19 19:32:46 INFO mapreduce.Job:  map 52% reduce 12%
+26/01/19 19:32:52 INFO mapreduce.Job:  map 53% reduce 12%
+26/01/19 19:33:01 INFO mapreduce.Job:  map 54% reduce 12%
+26/01/19 19:33:02 INFO mapreduce.Job:  map 54% reduce 13%
+26/01/19 19:33:10 INFO mapreduce.Job:  map 55% reduce 13%
+26/01/19 19:33:19 INFO mapreduce.Job:  map 56% reduce 13%
+26/01/19 19:33:23 INFO mapreduce.Job:  map 56% reduce 14%
+26/01/19 19:33:28 INFO mapreduce.Job:  map 57% reduce 14%
+26/01/19 19:33:37 INFO mapreduce.Job:  map 58% reduce 14%
+26/01/19 19:33:46 INFO mapreduce.Job:  map 59% reduce 14%
+26/01/19 19:33:52 INFO mapreduce.Job:  map 59% reduce 15%
+26/01/19 19:33:54 INFO mapreduce.Job:  map 60% reduce 15%
+26/01/19 19:34:03 INFO mapreduce.Job:  map 61% reduce 15%
+26/01/19 19:34:12 INFO mapreduce.Job:  map 62% reduce 15%
+26/01/19 19:34:21 INFO mapreduce.Job:  map 63% reduce 15%
+26/01/19 19:34:28 INFO mapreduce.Job:  map 63% reduce 16%
+26/01/19 19:34:30 INFO mapreduce.Job:  map 64% reduce 16%
+26/01/19 19:34:39 INFO mapreduce.Job:  map 65% reduce 16%
+26/01/19 19:34:47 INFO mapreduce.Job:  map 66% reduce 16%
+26/01/19 19:34:56 INFO mapreduce.Job:  map 67% reduce 16%
+26/01/19 19:35:03 INFO mapreduce.Job:  map 67% reduce 17%
+26/01/19 19:35:07 INFO mapreduce.Job:  map 68% reduce 17%
+26/01/19 19:35:15 INFO mapreduce.Job:  map 69% reduce 17%
+26/01/19 19:35:24 INFO mapreduce.Job:  map 70% reduce 17%
+26/01/19 19:35:31 INFO mapreduce.Job:  map 71% reduce 17%
+26/01/19 19:35:36 INFO mapreduce.Job:  map 71% reduce 18%
+26/01/19 19:35:42 INFO mapreduce.Job:  map 72% reduce 18%
+26/01/19 19:35:50 INFO mapreduce.Job:  map 73% reduce 18%
+26/01/19 19:36:00 INFO mapreduce.Job:  map 74% reduce 18%
+26/01/19 19:36:08 INFO mapreduce.Job:  map 75% reduce 18%
+26/01/19 19:36:12 INFO mapreduce.Job:  map 75% reduce 19%
+26/01/19 19:36:17 INFO mapreduce.Job:  map 76% reduce 19%
+26/01/19 19:36:25 INFO mapreduce.Job:  map 77% reduce 19%
+26/01/19 19:36:35 INFO mapreduce.Job:  map 78% reduce 19%
+26/01/19 19:36:44 INFO mapreduce.Job:  map 79% reduce 19%
+26/01/19 19:36:48 INFO mapreduce.Job:  map 79% reduce 20%
+26/01/19 19:36:52 INFO mapreduce.Job:  map 80% reduce 20%
+26/01/19 19:37:01 INFO mapreduce.Job:  map 81% reduce 20%
+26/01/19 19:37:14 INFO mapreduce.Job:  map 82% reduce 20%
+26/01/19 19:37:24 INFO mapreduce.Job:  map 83% reduce 20%
+26/01/19 19:37:27 INFO mapreduce.Job:  map 83% reduce 21%
+26/01/19 19:37:33 INFO mapreduce.Job:  map 84% reduce 21%
+26/01/19 19:37:41 INFO mapreduce.Job:  map 85% reduce 21%
+26/01/19 19:37:52 INFO mapreduce.Job:  map 86% reduce 21%
+26/01/19 19:38:01 INFO mapreduce.Job:  map 87% reduce 21%
+26/01/19 19:38:04 INFO mapreduce.Job:  map 87% reduce 22%
+26/01/19 19:38:10 INFO mapreduce.Job:  map 88% reduce 22%
+26/01/19 19:38:18 INFO mapreduce.Job:  map 89% reduce 22%
+26/01/19 19:38:27 INFO mapreduce.Job:  map 90% reduce 22%
+26/01/19 19:38:37 INFO mapreduce.Job:  map 91% reduce 22%
+26/01/19 19:38:40 INFO mapreduce.Job:  map 91% reduce 23%
+26/01/19 19:38:47 INFO mapreduce.Job:  map 92% reduce 23%
+26/01/19 19:38:57 INFO mapreduce.Job:  map 93% reduce 23%
+26/01/19 19:39:06 INFO mapreduce.Job:  map 94% reduce 23%
+26/01/19 19:39:15 INFO mapreduce.Job:  map 95% reduce 23%
+26/01/19 19:39:19 INFO mapreduce.Job:  map 95% reduce 24%
+26/01/19 19:39:28 INFO mapreduce.Job:  map 96% reduce 24%
+26/01/19 19:39:36 INFO mapreduce.Job:  map 97% reduce 24%
+26/01/19 19:39:47 INFO mapreduce.Job:  map 98% reduce 24%
+26/01/19 19:39:58 INFO mapreduce.Job:  map 98% reduce 25%
+26/01/19 19:39:59 INFO mapreduce.Job:  map 99% reduce 25%
+26/01/19 19:40:12 INFO mapreduce.Job:  map 100% reduce 25%
+26/01/19 19:40:20 INFO mapreduce.Job:  map 100% reduce 26%
+26/01/19 19:40:38 INFO mapreduce.Job:  map 100% reduce 27%
+26/01/19 19:40:56 INFO mapreduce.Job:  map 100% reduce 28%
+26/01/19 19:41:20 INFO mapreduce.Job:  map 100% reduce 29%
+26/01/19 19:41:34 INFO mapreduce.Job:  map 100% reduce 30%
+26/01/19 19:41:35 INFO mapreduce.Job:  map 100% reduce 31%
+26/01/19 19:41:37 INFO mapreduce.Job:  map 100% reduce 32%
+26/01/19 19:41:38 INFO mapreduce.Job:  map 100% reduce 33%
+26/01/19 19:41:40 INFO mapreduce.Job:  map 100% reduce 34%
+26/01/19 19:41:43 INFO mapreduce.Job:  map 100% reduce 36%
+26/01/19 19:41:46 INFO mapreduce.Job:  map 100% reduce 37%
+26/01/19 19:41:47 INFO mapreduce.Job:  map 100% reduce 38%
+26/01/19 19:41:49 INFO mapreduce.Job:  map 100% reduce 39%
+26/01/19 19:41:50 INFO mapreduce.Job:  map 100% reduce 40%
+26/01/19 19:41:52 INFO mapreduce.Job:  map 100% reduce 41%
+26/01/19 19:41:55 INFO mapreduce.Job:  map 100% reduce 42%
+26/01/19 19:41:56 INFO mapreduce.Job:  map 100% reduce 43%
+26/01/19 19:41:58 INFO mapreduce.Job:  map 100% reduce 44%
+26/01/19 19:41:59 INFO mapreduce.Job:  map 100% reduce 45%
+26/01/19 19:42:01 INFO mapreduce.Job:  map 100% reduce 46%
+26/01/19 19:42:04 INFO mapreduce.Job:  map 100% reduce 47%
+26/01/19 19:42:05 INFO mapreduce.Job:  map 100% reduce 48%
+26/01/19 19:42:07 INFO mapreduce.Job:  map 100% reduce 49%
+26/01/19 19:42:08 INFO mapreduce.Job:  map 100% reduce 50%
+26/01/19 19:42:10 INFO mapreduce.Job:  map 100% reduce 51%
+26/01/19 19:42:13 INFO mapreduce.Job:  map 100% reduce 52%
+26/01/19 19:42:14 INFO mapreduce.Job:  map 100% reduce 53%
+26/01/19 19:42:16 INFO mapreduce.Job:  map 100% reduce 54%
+26/01/19 19:42:17 INFO mapreduce.Job:  map 100% reduce 55%
+26/01/19 19:42:19 INFO mapreduce.Job:  map 100% reduce 56%
+26/01/19 19:42:23 INFO mapreduce.Job:  map 100% reduce 57%
+26/01/19 19:42:29 INFO mapreduce.Job:  map 100% reduce 58%
+26/01/19 19:42:38 INFO mapreduce.Job:  map 100% reduce 59%
+26/01/19 19:42:44 INFO mapreduce.Job:  map 100% reduce 60%
+26/01/19 19:42:52 INFO mapreduce.Job:  map 100% reduce 61%
+26/01/19 19:42:58 INFO mapreduce.Job:  map 100% reduce 62%
+26/01/19 19:43:07 INFO mapreduce.Job:  map 100% reduce 63%
+26/01/19 19:43:17 INFO mapreduce.Job:  map 100% reduce 64%
+26/01/19 19:43:28 INFO mapreduce.Job:  map 100% reduce 65%
+26/01/19 19:43:37 INFO mapreduce.Job:  map 100% reduce 66%
+26/01/19 19:43:49 INFO mapreduce.Job:  map 100% reduce 67%
+26/01/19 19:43:58 INFO mapreduce.Job:  map 100% reduce 68%
+26/01/19 19:44:10 INFO mapreduce.Job:  map 100% reduce 69%
+26/01/19 19:44:19 INFO mapreduce.Job:  map 100% reduce 70%
+26/01/19 19:44:32 INFO mapreduce.Job:  map 100% reduce 71%
+26/01/19 19:44:42 INFO mapreduce.Job:  map 100% reduce 72%
+26/01/19 19:44:52 INFO mapreduce.Job:  map 100% reduce 73%
+26/01/19 19:45:03 INFO mapreduce.Job:  map 100% reduce 74%
+26/01/19 19:45:12 INFO mapreduce.Job:  map 100% reduce 75%
+26/01/19 19:45:17 INFO mapreduce.Job:  map 100% reduce 76%
+26/01/19 19:45:20 INFO mapreduce.Job:  map 100% reduce 77%
+26/01/19 19:45:23 INFO mapreduce.Job:  map 100% reduce 78%
+26/01/19 19:45:26 INFO mapreduce.Job:  map 100% reduce 79%
+26/01/19 19:45:29 INFO mapreduce.Job:  map 100% reduce 80%
+26/01/19 19:45:34 INFO mapreduce.Job:  map 100% reduce 81%
+26/01/19 19:45:38 INFO mapreduce.Job:  map 100% reduce 82%
+26/01/19 19:45:41 INFO mapreduce.Job:  map 100% reduce 83%
+26/01/19 19:45:44 INFO mapreduce.Job:  map 100% reduce 84%
+26/01/19 19:45:47 INFO mapreduce.Job:  map 100% reduce 85%
+26/01/19 19:45:52 INFO mapreduce.Job:  map 100% reduce 86%
+26/01/19 19:45:56 INFO mapreduce.Job:  map 100% reduce 87%
+26/01/19 19:46:02 INFO mapreduce.Job:  map 100% reduce 88%
+26/01/19 19:46:10 INFO mapreduce.Job:  map 100% reduce 89%
+26/01/19 19:46:17 INFO mapreduce.Job:  map 100% reduce 90%
+26/01/19 19:46:26 INFO mapreduce.Job:  map 100% reduce 91%
+26/01/19 19:46:34 INFO mapreduce.Job:  map 100% reduce 92%
+26/01/19 19:46:41 INFO mapreduce.Job:  map 100% reduce 93%
+26/01/19 19:46:56 INFO mapreduce.Job:  map 100% reduce 94%
+26/01/19 19:47:26 INFO mapreduce.Job:  map 100% reduce 95%
+26/01/19 19:47:56 INFO mapreduce.Job:  map 100% reduce 96%
+26/01/19 19:48:26 INFO mapreduce.Job:  map 100% reduce 97%
+26/01/19 19:48:56 INFO mapreduce.Job:  map 100% reduce 98%
+26/01/19 19:49:26 INFO mapreduce.Job:  map 100% reduce 99%
+26/01/19 19:49:57 INFO mapreduce.Job:  map 100% reduce 100%
+26/01/19 19:50:12 INFO mapreduce.Job: Job job_1768850651490_0001 completed successfully
+26/01/19 19:50:12 INFO mapreduce.Job: Counters: 51
+	File System Counters
+		FILE: Number of bytes read=157654667913
+		FILE: Number of bytes written=218141655084
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=54449052754
+		HDFS: Number of bytes written=2284727
+		HDFS: Number of read operations=1230
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=8
+	Job Counters
+		Killed map tasks=1
+		Launched map tasks=407
+		Launched reduce tasks=4
+		Data-local map tasks=401
+		Rack-local map tasks=6
+		Total time spent by all maps in occupied slots (ms)=13816498
+		Total time spent by all reduces in occupied slots (ms)=14572364
+		Total time spent by all map tasks (ms)=6908249
+		Total time spent by all reduce tasks (ms)=3643091
+		Total vcore-milliseconds taken by all map tasks=6908249
+		Total vcore-milliseconds taken by all reduce tasks=3643091
+		Total megabyte-milliseconds taken by all map tasks=7074046976
+		Total megabyte-milliseconds taken by all reduce tasks=7461050368
+	Map-Reduce Framework
+		Map input records=3000000000
+		Map output records=3000000000
+		Map output bytes=54447352462
+		Map output materialized bytes=60447362206
+		Input split bytes=41412
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=100000
+		Reduce shuffle bytes=60447362206
+		Reduce input records=3000000000
+		Reduce output records=100000
+		Spilled Records=10823901588
+		Shuffled Maps =1624
+		Failed Shuffles=0
+		Merged Map outputs=1624
+		GC time elapsed (ms)=57633
+		CPU time spent (ms)=10340130
+		Physical memory (bytes) snapshot=129545220096
+		Virtual memory (bytes) snapshot=605083955200
+		Total committed heap usage (bytes)=168186347520
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters
+		Bytes Read=54449011342
+	File Output Format Counters
+		Bytes Written=2284727
+26/01/19 19:50:12 INFO streaming.StreamJob: Output directory: output_intermediate_cpp
+------------------------------------------------
+Starting Job 2: Sorting (Rank by Bytes) [C++]
+------------------------------------------------
+26/01/19 19:50:12 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+packageJobJar: [/tmp/hadoop-unjar7193879608275257255/] [] /tmp/streamjob8875551589265733829.jar tmpDir=null
+26/01/19 19:50:12 INFO client.RMProxy: Connecting to ResourceManager at hadoop-master/172.19.0.4:8032
+26/01/19 19:50:12 INFO client.RMProxy: Connecting to ResourceManager at hadoop-master/172.19.0.4:8032
+26/01/19 19:50:13 INFO mapred.FileInputFormat: Total input paths to process : 4
+26/01/19 19:50:13 INFO mapreduce.JobSubmitter: number of splits:4
+26/01/19 19:50:13 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1768850651490_0002
+26/01/19 19:50:13 INFO impl.YarnClientImpl: Submitted application application_1768850651490_0002
+26/01/19 19:50:13 INFO mapreduce.Job: The url to track the job: http://hadoop-master:8088/proxy/application_1768850651490_0002/
+26/01/19 19:50:13 INFO mapreduce.Job: Running job: job_1768850651490_0002
+26/01/19 19:50:20 INFO mapreduce.Job: Job job_1768850651490_0002 running in uber mode : false
+26/01/19 19:50:20 INFO mapreduce.Job:  map 0% reduce 0%
+26/01/19 19:50:23 INFO mapreduce.Job:  map 100% reduce 0%
+26/01/19 19:50:26 INFO mapreduce.Job:  map 100% reduce 100%
+26/01/19 19:50:27 INFO mapreduce.Job: Job job_1768850651490_0002 completed successfully
+26/01/19 19:50:27 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=2584733
+		FILE: Number of bytes written=5774149
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=2285215
+		HDFS: Number of bytes written=2284727
+		HDFS: Number of read operations=15
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters
+		Launched map tasks=4
+		Launched reduce tasks=1
+		Data-local map tasks=4
+		Total time spent by all maps in occupied slots (ms)=9072
+		Total time spent by all reduces in occupied slots (ms)=3288
+		Total time spent by all map tasks (ms)=4536
+		Total time spent by all reduce tasks (ms)=822
+		Total vcore-milliseconds taken by all map tasks=4536
+		Total vcore-milliseconds taken by all reduce tasks=822
+		Total megabyte-milliseconds taken by all map tasks=4644864
+		Total megabyte-milliseconds taken by all reduce tasks=1683456
+	Map-Reduce Framework
+		Map input records=100000
+		Map output records=100000
+		Map output bytes=2384727
+		Map output materialized bytes=2584751
+		Input split bytes=488
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=94294
+		Reduce shuffle bytes=2584751
+		Reduce input records=100000
+		Reduce output records=100000
+		Spilled Records=200000
+		Shuffled Maps =4
+		Failed Shuffles=0
+		Merged Map outputs=4
+		GC time elapsed (ms)=142
+		CPU time spent (ms)=2450
+		Physical memory (bytes) snapshot=1415495680
+		Virtual memory (bytes) snapshot=8226017280
+		Total committed heap usage (bytes)=1976565760
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters
+		Bytes Read=2284727
+	File Output Format Counters
+		Bytes Written=2284727
+26/01/19 19:50:27 INFO streaming.StreamJob: Output directory: output_final_cpp
+------------------------------------------------
+Pipeline Finished Successfully.
+Here are the top 10 results:
+26/01/19 19:50:27 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26.137.28.205	22073917
+46.35.249.83	22076826
+79.17.70.35	22172759
+33.158.131.206	22188701
+26.46.109.249	22195912
+95.27.165.142	22211371
+82.192.229.118	22224939
+95.195.196.81	22229449
+39.227.139.199	22231337
+116.88.117.190	22231726
+cat: Unable to write to output stream.
+root@hadoop-master:~/src#
