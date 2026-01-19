@@ -14,7 +14,7 @@
     </property>
     <property>
         <name>yarn.nodemanager.resource.memory-mb</name>
-        <value>4096</value>
+        <value>16000</value>
     </property>
     <property>
         <name>yarn.scheduler.minimum-allocation-mb</name>
@@ -22,7 +22,11 @@
     </property>
     <property>
         <name>yarn.scheduler.maximum-allocation-mb</name>
-        <value>4096</value>
+        <value>16000</value>
+    </property>
+    <property>
+      <name>yarn.nodemanager.resource.cpu-vcores</name>
+      <value>14</value> <!-- 14 threads -->
     </property>
     <property>
         <name>yarn.nodemanager.vmem-check-enabled</name>

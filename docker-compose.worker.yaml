@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  hadoop-pc-slave:
+    build:
+      context: .
+    image: kiwenlau/hadoop:1.0
+    container_name: hadoop-pc-slave
+    hostname: hadoop-pc-slave
+    privileged: true
+    ports:
+      - "2122:22"      # SSH mapped to 2122 to avoid conflict
+      - "50010:50010"  # DataNode
+      - "50020:50020"  # DataNode IPC
+      - "50075:50075"  # DataNode HTTP
+      - "8042:8042"    # NodeManager
+    environment:
+      - HADOOP_HOME=/usr/local/hadoop
+    extra_hosts:
+      - "hadoop-master:YOUR_MASTER_IP_HERE" # TODO replace this!
+    tty: true
+    stdin_open: true
+    command: ["/usr/sbin/sshd", "-D"]
