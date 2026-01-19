@@ -20,4 +20,4 @@ services:
       - "hadoop-master:YOUR_MASTER_IP_HERE" # TODO replace this!
     tty: true
     stdin_open: true
-    command: ["/usr/sbin/sshd", "-D"]
+    entrypoint: bash /root/start-worker.sh
