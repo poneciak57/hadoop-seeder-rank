@@ -11,8 +11,11 @@ services:
     ports:
       - "2122:22"      # SSH
       - "50010:50010"  # DataNode Transfer
+      # - "50011:50011"  # DataNode Transfer
       - "50020:50020"  # DataNode IPC
+      # - "50021:50021"  # DataNode IPC
       - "50075:50075"  # DataNode HTTP
+      # - "50076:50076"  # DataNode HTTP
       - "8042:8042"    # NodeManager Web
       - "8040:8040"    # NodeManager Localizer
       - "8041:8041"    # NodeManager RPC (Fixed port)
@@ -21,6 +24,13 @@ services:
     environment:
       - HADOOP_HOME=/usr/local/hadoop
       - ENV_DATANODE_HOSTNAME=hadoop-slave2
+      # NEW VARIABLES TO CHANGE INTERNAL PORTS:
+      - ENV_DATANODE_PORT=50010
+      - ENV_DATANODE_IPC_PORT=50020
+      - ENV_DATANODE_HTTP_PORT=50075
+      # - ENV_DATANODE_PORT=50011
+      # - ENV_DATANODE_IPC_PORT=50021
+      # - ENV_DATANODE_HTTP_PORT=50076
     extra_hosts:
       - "hadoop-master:YOUR_MASTER_IP_HERE" # TODO: Replace with Mac Master IP
     tty: true
