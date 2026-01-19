@@ -1,24 +1,33 @@
 version: "3"
 
 services:
-  hadoop-pc-slave:
+  hadoop-slave2:
     build:
       context: .
     image: kiwenlau/hadoop:1.0
-    container_name: hadoop-pc-slave
-    hostname: hadoop-pc-slave
+    container_name: hadoop-slave2
+    hostname: hadoop-slave2
     privileged: true
     ports:
-      - "2122:22"      # SSH mapped to 2122 to avoid conflict
-      - "50010:50010"  # DataNode
+      - "2122:22"      # SSH
+      - "50010:50010"  # DataNode Transfer
       - "50020:50020"  # DataNode IPC
       - "50075:50075"  # DataNode HTTP
-      - "8042:8042"    # NodeManager
+      - "8042:8042"    # NodeManager Web
+      - "8040:8040"    # NodeManager Localizer
+      - "8041:8041"    # NodeManager RPC (Fixed port)
+      - "13562:13562"  # Shuffle Handler
     environment:
       - HADOOP_HOME=/usr/local/hadoop
       - ENV_DATANODE_HOSTNAME=hadoop-slave2
     extra_hosts:
-      - "hadoop-master:YOUR_MASTER_IP_HERE" # TODO replace this!
+      - "hadoop-master:YOUR_MASTER_IP_HERE" # TODO: Replace with Mac Master IP
     tty: true
     stdin_open: true
     entrypoint: bash /root/start-worker.sh
+    networks:
+      - hadoop
+
+networks:
+  hadoop:
+    driver: bridge

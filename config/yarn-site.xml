@@ -32,4 +32,8 @@
         <name>yarn.nodemanager.vmem-check-enabled</name>
         <value>false</value>
     </property>
+    <property>
+        <name>yarn.nodemanager.address</name>
+        <value>${yarn.nodemanager.hostname}:8041</value>
+    </property>
 </configuration>
