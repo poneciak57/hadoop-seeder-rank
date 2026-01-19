@@ -18,4 +18,8 @@
         <name>dfs.namenode.datanode.registration.ip-hostname-check</name>
         <value>false</value>
     </property>
+    <property>
+        <name>dfs.datanode.use.datanode.hostname</name>
+        <value>true</value>
+    </property>
 </configuration>
